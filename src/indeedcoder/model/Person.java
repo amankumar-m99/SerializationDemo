@@ -6,28 +6,36 @@ public class Person implements Serializable {
 
 	private static final long serialVersionUID = -2953023266086098345L;
 
-	private int id;
-	private String name;
+	private String firstName;
+	private String lastName;
+	private String email;
 
-	public int getId() {
-		return id;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
-	public String getName() {
-		return name;
+	public String getLastName() {
+		return lastName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	@Override
 	public String toString() {
-		return "Person [id=" + id + ", name=" + name + "]";
+		return "Person [firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + "]";
 	}
-
 }

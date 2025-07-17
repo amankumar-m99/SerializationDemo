@@ -13,7 +13,19 @@ import indeedcoder.model.Person;
 
 public class PersonSerializer {
 
+	private static boolean isFileValid(File file) {
+		return file.exists();
+	}
+
+	public static Optional<Person> deSerializePerson(String filePath) {
+		File file = new File(filePath);
+		return deSerializePerson(file);
+	}
+
 	public static Optional<Person> deSerializePerson(File file) {
+		if (!isFileValid(file)) {
+			return Optional.empty();
+		}
 		Person person = null;
 		try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(file))) {
 			person = (Person) in.readObject();
